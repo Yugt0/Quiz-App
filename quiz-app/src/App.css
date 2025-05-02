@@ -1,0 +1,212 @@
+/* General styling for the app */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Center the quiz container */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align to the top */
+  align-items: center;
+  margin-top: 50px;
+  padding: 40px 50px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  height: 650px;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Progress bar at the top (Always visible) */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #bdc3c7;
+  margin-bottom: 20px;
+  /* Adjust margin to avoid overlap */
+  border-radius: 6px;
+  position: absolute;
+  /* Position it at the top of the quiz container */
+  top: 0;
+}
+
+.progress-bar-filled {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+/* Styling for question container */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  flex-grow: 1;
+  margin-top: 40px;
+  /* Adjust margin to leave space for the progress bar */
+}
+
+/* Styling for question text */
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 30px;
+  max-width: 80%;
+  line-height: 1.4;
+}
+
+/* Styling for options (answer container) */
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 85%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Option styling */
+.option {
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  text-align: center;
+}
+
+/* Correct answer styling */
+.correct {
+  background-color: #2ecc71;
+  color: white;
+  border-color: #2ecc71;
+}
+
+/* Incorrect answer styling */
+.incorrect {
+  background-color: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+/* Styling for the Next button */
+.next-btn {
+  padding: 18px 25px;
+  font-size: 22px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-top: 40px;
+  opacity: 0.7;
+  pointer-events: none;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-btn:hover {
+  background-color: #27ae60;
+  transform: translateY(-3px);
+}
+
+.next-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Centered result styling */
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 750px;
+  width: 100%;
+}
+
+/* Score box */
+.score-box {
+  margin-top: 30px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.result h2 {
+  font-size: 36px;
+  color: #34495e;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.result p {
+  font-size: 24px;
+  color: #7f8c8d;
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px 25px;
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .question-container {
+    padding: 15px;
+  }
+
+  .option {
+    font-size: 18px;
+  }
+
+  .next-btn {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .result p {
+    font-size: 22px;
+  }
+}
